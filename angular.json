@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "chatapp-angular"
+    }
+  },
+  "defaultProject": "chatapp-angular",
+  "cli": {
+    "analytics": "b06ee3aa-10dc-47ec-a508-f56d9b9a3c9f"
+  }
 }
