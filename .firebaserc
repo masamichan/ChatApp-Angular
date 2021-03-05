@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "chatapp-angulat": {
+      "hosting": {
+        "chatapp-angular": [
+          "chatapp-angulat"
+        ]
+      }
+    }
+  }
+}
