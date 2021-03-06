@@ -23,10 +23,8 @@ export class AppComponent {
   commentsRef: AngularFireList<Comment>;
   currentUser = CURRENT_USER;
   comment = '';
-  item$: Observable<any>;
 
   constructor(private db: AngularFireDatabase) {
-    this.item$ = db.object('/item').valueChanges();
     this.commentsRef = db.list('/comments');
     this.comments$ = this.commentsRef.snapshotChanges().pipe(
       map((snapshots: SnapshotAction<Comment>[]) => {
@@ -45,5 +43,15 @@ export class AppComponent {
       );
       this.comment = '';
     }
+  }
+
+  updateComment(comment: Comment): void {
+    const { key, message } = comment;
+
+    this.commentsRef.update(key, { message });
+  }
+
+  deleteComment(comment: Comment): void {
+    this.commentsRef.remove(comment.key);
   }
 }
