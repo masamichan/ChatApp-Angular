@@ -5,7 +5,7 @@ import {
   SnapshotAction,
 } from '@angular/fire/database';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { Comment } from './class/comment';
 import { User } from './class/user';
