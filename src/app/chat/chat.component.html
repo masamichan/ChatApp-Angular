@@ -1,4 +1,17 @@
+<ng-template #welcome>
+  <div class="welcome">
+    <div class="jumbotron jumbotron-fluid p-5 border border-secondary bg-light">
+      <div class="container">
+        <h1 class="display-3">Angular Chat!</h1>
+        <p class="w-100">
+          <a href="/signup">新規登録</a>、または<a href="/login">ログイン</a>して始めましょう！
+        </p>
+      </div>
+    </div>
+  </div>
+</ng-template>
 
+<ng-container *ngIf="currentUser$ | async; else welcome">
   <section class="chat">
     <div class="chat-timeline">
       <div *ngFor="let comment of comments$ | async"
@@ -51,4 +64,4 @@
       </div>
     </form>
   </section>
-
+</ng-container>
